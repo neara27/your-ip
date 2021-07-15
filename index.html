@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body onload="ip()">
+    <div id="app"></div>
+  </body>
+</html>
+
+<script>
+  function ip() {
+    fetch('https://net.lolicon.app/detail')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('app').innerHTML = `あなたの国は${
+          data.country
+        }<br>IPは${data.ip}`;
+      });
+  }
+</script>
